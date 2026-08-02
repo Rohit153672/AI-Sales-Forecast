@@ -1,0 +1,13 @@
+{
+    "horizon": 1,
+    "best_iteration": 306,
+    "train_rows": 179787,
+    "validation_rows": 40534,
+    "test_rows": 37773,
+    "validation_rmse": 3275.248834455501,
+    "validation_mae": 1543.8359926213693,
+    "test_rmse": 3049.73294855975,
+    "test_mae": 1525.0084235497084,
+    "lag1_rmse": 4265.390149935727,
+    "lag52_rmse": 4362.769096104583
+}

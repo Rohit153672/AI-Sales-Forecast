@@ -9,3 +9,4 @@ streamlit
 joblib
 python-dateutil
 pydantic
+matplotlib

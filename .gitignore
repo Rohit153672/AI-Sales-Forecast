@@ -1,4 +1,27 @@
-*.pkl
+# Python
 __pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+myenv/
+
+# IDE
+.vscode/
+.idea/
+
+# Jupyter
 .ipynb_checkpoints/
-.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated data
+data/processed/
+
+# Reports
+reports/
+
+# Model artifacts
+models/*.pkl
