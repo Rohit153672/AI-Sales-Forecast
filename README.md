@@ -1,78 +1,105 @@
-# 📦 Supply Chain Resilience Modeling using Demand Forecasting (Walmart Dataset)
+# 📦 AI Supply Chain Forecasting & Inventory Intelligence
 
-This project builds an **end-to-end machine learning system** that not only forecasts demand but also translates predictions into **actionable supply chain decisions**.
-
-It integrates:
-- 📊 Demand Forecasting (LightGBM)
-- 🧠 Explainable AI (SHAP)
-- 📦 Inventory Optimization (Reorder Point, Safety Stock)
-- ⚖️ Decision Support (AHP-inspired approach)
-- ⚡ FastAPI Backend
-- 🎛️ Streamlit Interactive Dashboard
+An end-to-end machine learning application that predicts weekly retail demand and provides inventory recommendations using LightGBM, FastAPI, and Streamlit.
 
 ---
 
-## 🎯 Objective
+## Overview
 
-To develop a system that:
-- Predicts future demand accurately  
-- Explains key drivers behind predictions  
-- Converts predictions into inventory decisions  
-- Improves **supply chain efficiency and resilience**
+This project forecasts weekly product demand from historical sales and business data. It also calculates inventory metrics such as Safety Stock and Reorder Point, while explaining each prediction using SHAP.
+
+The application includes a FastAPI backend for real-time predictions and a Streamlit dashboard for interactive visualization.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-- ✅ Machine Learning-based demand forecasting (LightGBM)  
-- ✅ SHAP-based explainability for model transparency  
-- ✅ Inventory optimization (safety stock, reorder point)  
-- ✅ Demand variability simulation for resilience analysis  
-- ✅ AHP-inspired multi-criteria decision support  
-- ✅ FastAPI for real-time prediction API  
-- ✅ Streamlit dashboard for interactive usage  
-
----
-
-## 🧠 Methodology
-
-### 1. Demand Forecasting
-- Used LightGBM to predict weekly sales  
-- Feature engineering:
-  - Lag features  
-  - Rolling averages  
-  - Date-based features  
+- 📈 Weekly demand forecasting using LightGBM
+- ⚙️ Time-series feature engineering with historical sales and calendar information
+- 🔍 SHAP explainability for prediction insights
+- 📦 Inventory planning using Safety Stock and Reorder Point
+- 🚀 FastAPI REST API for real-time inference
+- 💻 Interactive Streamlit dashboard with Plotly visualizations
 
 ---
 
-### 2. Explainable AI (SHAP)
-- Identifies key factors influencing predictions  
-- Helps interpret model behavior  
+## Tech Stack
+
+- **Language:** Python
+- **Machine Learning:** LightGBM, Scikit-learn
+- **Data Processing:** Pandas, NumPy
+- **Explainability:** SHAP
+- **Backend:** FastAPI
+- **Frontend:** Streamlit
+- **Visualization:** Plotly
 
 ---
 
-### 3. Inventory Optimization
+## Results
 
-- **Reorder Point**  
-  = Average Demand × Lead Time  
+Compared with a simple lag-based forecasting approach, the model achieved:
 
-- **Safety Stock**  
-  = Z × Std Dev × √Lead Time  
+- ✅ **24.4% lower RMSE**
+- ✅ **17.8% lower MAE**
 
-- **Inventory Level**  
-  = Reorder Point + Safety Stock  
+through feature engineering and hyperparameter tuning.
 
 ---
 
-### 4. Supply Chain Resilience
-- Simulated demand variability  
-- Analyzed impact of uncertainty on inventory decisions  
+## Dashboard
+
+The dashboard allows users to:
+
+- Generate demand forecasts
+- View historical sales trends
+- Monitor inventory metrics
+- Understand model predictions using SHAP
+
+> Add dashboard screenshots here.
 
 ---
 
-### 5. Decision Support (AHP - Simplified)
-- Used weighted scoring to rank alternatives  
-- Criteria:
-  - Demand  
-  - Variability  
-  - Profitability  
+## API Endpoints
+
+| Endpoint | Purpose |
+|----------|---------|
+| `/forecast` | Predict weekly demand |
+| `/history` | Retrieve historical sales |
+| `/inventory` | Calculate inventory metrics |
+| `/explain` | Explain predictions using SHAP |
+
+---
+
+## Project Structure
+
+```
+AI-Sales-Forecast/
+│
+├── app.py
+├── src/
+├── models/
+├── data/
+├── reports/
+└── requirements.txt
+```
+
+---
+
+## Run Locally
+
+```bash
+pip install -r requirements.txt
+
+uvicorn src.api:app --reload
+
+streamlit run app.py
+```
+
+---
+
+## Future Improvements
+
+- Multi-step forecasting
+- Cloud deployment
+- Docker support
+- MLOps pipeline
